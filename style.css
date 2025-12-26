@@ -1,0 +1,139 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f5f7fb;
+      display: flex;
+      justify-content: center;
+      padding: 50px 16px;
+      color: #111827;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 40px;
+    }
+
+    .main {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .main h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .main p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .input-div {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    input {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    input::placeholder {
+      color: #9ca3af;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #2563eb;
+      color: #ffffff;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    #result,
+    #reveal-result {
+      margin-top: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      min-height: 60px;
+    }
+
+    #result p,
+    #reveal-result p {
+      font-size: 0.95rem;
+      color: #111827;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      cursor: pointer;
+      color: #374151;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #f3f4f6;
+    }
+
+    @media (max-width: 500px) {
+      .main {
+        padding: 24px;
+      }
+      .main h1 {
+        font-size: 1.35rem;
+      }
+    }

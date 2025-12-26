@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secret Sentence Encoder</title>
+ <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="main">
+      <h1>Convert sentence into secret code</h1>
+      <p>
+        This tool converts your normal sentence into a secure coded format by hiding a specific single letter.
+        Without knowing the hidden letter, the encoded message cannot be correctly decoded.<a href="#">Read docs</a>
+      </p>
+
+      <div class="sub-div">
+        <div class="input-div">
+          <label for="sentence-input">Enter your sentence</label>
+          <input type="text" id="sentence-input" placeholder="Type your sentence here">
+
+          <label for="hide-letter">Hide letter</label>
+          <input type="text" id="hide-letter" placeholder="Single letter" maxlength="1">
+
+          <button id="process-button">Generate Code</button>
+
+          <div id="result">
+            <button class="copy-btn" id="copy-btn-result">Copy</button>
+            <p id="result-p"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>Decode secret code</h1>
+
+      <div class="sub-div">
+        <div class="input-div">
+          <label for="code-input">Enter your code</label>
+          <input type="text" id="code-input" placeholder="Paste secret code">
+
+          <label for="reveal-letter">Reveal letter</label>
+          <input type="text" id="reveal-letter" placeholder="Hidden letter" maxlength="1">
+
+          <button id="reveal-button">Reveal Sentence</button>
+
+          <div id="reveal-result">
+            <button class="copy-btn" id="copy-btn-reveal">Copy</button>
+            <p id="reveal-result-p"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
