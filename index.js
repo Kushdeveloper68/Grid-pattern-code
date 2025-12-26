@@ -40,26 +40,31 @@ function createLetterGrid(grid,letters) {
 
 btn.addEventListener("click", () => {
   // defining variable;
+  const hide = hideLetter.value.trim().toLowerCase();
   let grid = [[], [], [], [], []];
   let codes = [];
   let letters = "abcdefghijklmnopqrstuvwxyz";
 
-  letters = arranging(letters, hideLetter);
+  // arrange using lowercase hide letter
+  letters = arranging(letters, { value: hide });
 
   grid = createLetterGrid(grid, letters);
 
+  // get normalized sentence
+  const text = sentence.value.toLowerCase();
+
   // getting sentence code given by user.
-  for (const e of sentence.value) {
-    if (e == " ") {
+  for (const e of text) {
+    if (e === " ") {
       codes.push("-2");
-    } else if (e === hideLetter.value) {
+    } else if (e === hide) {
       codes.push("-1");
     } else {
       for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j <= 4; j++) {
           let element = grid[i][j];
           if (element === e) {
-            //  leading zero is
+            // leading zero is
             codes.push(`${i}${j}`);
           }
         }
@@ -77,7 +82,10 @@ revealBtn.addEventListener("click", () => {
   let letters = "abcdefghijklmnopqrstuvwxyz";
   let revealedLetters = [];
 
-  letters = arranging(letters, revealLetter);
+  const reveal = revealLetter.value.trim().toLowerCase();
+
+  // arrange using lowercase reveal letter
+  letters = arranging(letters, { value: reveal });
 
   grid = createLetterGrid(grid, letters);
 
@@ -90,7 +98,7 @@ revealBtn.addEventListener("click", () => {
     if (e === "-2") {
       revealedLetters.push(" ");
     } else if (e === "-1") {
-      revealedLetters.push(revealLetter.value);
+      revealedLetters.push(reveal);
     } else {
       // parse numeric token robustly (handles "4" or "04" or "23")
       const num = parseInt(e, 10);
@@ -129,7 +137,8 @@ function copyfunction(paragra) {
   navigator.clipboard.writeText(paragra.innerText).then(() => {
     alert("Copied to clipboard");
   }).catch(err => {
-    alert("Failed to copy: ", err);
+    alert("Failed to copy: " + err);
+    console.error("Copy failed:", err);
   });
 }
 

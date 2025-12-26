@@ -84,7 +84,6 @@ Note: The decoder accepts tokens like `4` or `04`, but using fixed two-digit tok
 ---
 
 ## ⚠️ Known issues & edge cases
-- **Case sensitivity:** Current implementation assumes lowercase letters — uppercase input may fail to match grid letters. (Fix: normalize inputs to `.toLowerCase()`.)
 - **Missing validation:** No explicit check that hide/reveal letters are a single alphabetic character (empty or invalid input may produce unexpected results).
 - **Non-letter characters:** Punctuation, digits, and special symbols are ignored or skipped — they are not encoded.
 - **Copy error alert:** On failure the code uses `alert("Failed to copy: ", err);` which passes two args to `alert`. Use concatenation or a proper error message.
