@@ -9,7 +9,7 @@ A small client-side tool that converts plain sentences into a compact “secret 
 - **Files:** `index.html` (UI), `index.js` (encoding/decoding logic), `style.css` (visuals).
 
 ---
-
+## 🔗Live preview: [view](https://kushdeveloper68.github.io/Grid-pattern-code/)
 ## 🚀 Quick start
 1. Open `index.html` in your browser.
 2. In the **Encode** panel:
